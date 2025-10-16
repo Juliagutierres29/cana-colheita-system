@@ -18,9 +18,9 @@
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
-- <a href="https://www.linkedin.com/in/sabrina-otoni/">Sabrina Otoni</a>
+- <a >Sabrina Otoni</a>
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/in/andre-godoy/">André Godoy</a>
+- <a >André Godoy</a>
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

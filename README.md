@@ -1,4 +1,26 @@
+# FIAP - Faculdade de Informática e Administração Paulista
+
+<p align="center">
+<a href= "https://www.fiap.com.br/"><img src="https://www.fiap.com.br/wp-content/themes/fiap2016/images/sharing/fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
+</p>
+
+<br>
+
 # 🌾 Sistema de Cálculo de Perdas na Colheita de Cana-de-Açúcar
+
+## Grupo de Desenvolvimento - Cana Colheita System
+
+## 👨‍🎓 Integrantes: 
+- <a href="https://www.linkedin.com/in/julia-gutierres/">Julia Gutierres Fernandes Souza</a>
+- <a href="https://www.linkedin.com/in/everton-marinho/">Everton Marinho Souza</a>
+- <a href="https://www.linkedin.com/in/matheus-marteletti/">Matheus Ribeiro Marteletti</a> 
+- <a href="https://www.linkedin.com/in/raimunda-nayara/">Raimunda Nayara Mendes dos Santos</a>
+
+## 👩‍🏫 Professores:
+### Tutor(a) 
+- <a href="https://www.linkedin.com/in/sabrina-otoni/">Sabrina Otoni</a>
+### Coordenador(a)
+- <a href="https://www.linkedin.com/in/andre-godoy/">André Godoy</a>
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -6,9 +28,43 @@
 [![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat&logo=oracle&logoColor=white)](https://www.oracle.com/)
 [![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-Sistema completo em Python para calcular perdas durante a colheita de cana-de-açúcar, com integração ao banco de dados Oracle via Docker. 
+## 📜 Descrição
 
-**🎯 Objetivo**: Fornecer uma ferramenta robusta e precisa para produtores rurais calcularem e minimizarem perdas na colheita de cana-de-açúcar.
+Sistema completo em Python para calcular perdas durante a colheita de cana-de-açúcar, com integração ao banco de dados Oracle e PostgreSQL via Docker. O projeto foi desenvolvido como parte do curso da FIAP e implementa todos os tipos de dados obrigatórios (Lista, Tupla, Dicionário e Tabela de Memória) para análise de dados agrícolas.
+
+**🎯 Objetivo**: Fornecer uma ferramenta robusta e precisa para produtores rurais calcularem e minimizarem perdas na colheita de cana-de-açúcar, utilizando algoritmos avançados que consideram fatores ambientais e condições de cultivo.
+
+O sistema oferece interface CLI interativa, cálculos básicos e avançados de perdas, relatórios estatísticos consolidados, backup em JSON e sistema de ajuda completo. Implementa validação robusta de dados, logging detalhado e valores padrão inteligentes baseados nas condições brasileiras de cultivo.
+
+## 📁 Estrutura de pastas
+
+Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+
+- <b>assets/</b>: Nesta pasta ficarão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens e recursos visuais.
+
+- <b>config/</b>: Posicione aqui arquivos de configuração que são usados para definir parâmetros e ajustes do projeto (.env, configurações de banco, etc.).
+
+- <b>document/</b>: Aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
+
+- <b>scripts/</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups, setup automático.
+
+- <b>src/</b>: Todo o código fonte criado para o desenvolvimento do projeto, incluindo módulos de banco de dados (Oracle e PostgreSQL), funções de cálculo de perdas e utilitários.
+
+- <b>data/</b>: Aqui estão armazenados os arquivos JSON de exemplo e backups automáticos das produções e relatórios gerados pelo sistema.
+
+- <b>docker/</b>: Contém os scripts de inicialização dos bancos de dados, arquivos SQL de setup e configurações específicas do Docker.
+
+- <b>requirements.txt</b>: Lista todas as dependências Python necessárias para executar o projeto, incluindo cx_Oracle, psycopg2, pandas e outras bibliotecas.
+
+- <b>docker-compose.yml</b>: Configuração principal do Docker Compose para orquestração dos serviços Oracle Database.
+
+- <b>docker-compose-postgres.yml</b>: Configuração alternativa do Docker Compose para uso do PostgreSQL como banco de dados.
+
+- <b>main.py</b>: Arquivo principal de execução do sistema com interface CLI interativa e menu de opções.
+
+- <b>Makefile</b>: Arquivo com comandos automatizados para facilitar tarefas comuns como instalação, execução e testes.
+
+- <b>README.md</b>: Arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ---
 
@@ -20,7 +76,7 @@ git clone https://github.com/seu-usuario/cana-colheita-system.git
 cd cana-colheita-system
 
 # 2. Execute o setup automático
-./setup.sh
+scriptscripts/setup.sh
 
 # 3. Inicie o banco de dados
 docker-compose up -d
@@ -32,15 +88,17 @@ python main.py
 
 ## �📋 Índice
 
+- [Descrição](#-descrição)
+- [Estrutura de Pastas](#-estrutura-de-pastas)
 - [Início Rápido](#-início-rápido)
 - [Características](#-características)  
 - [Pré-requisitos](#-pré-requisitos)
-- [Instalação Detalhada](#-instalação-e-execução-passo-a-passo)
+- [Instalação Detalhada](#-como-executar-o-código)
 - [Como Usar](#-como-usar-o-sistema)
 - [Algoritmos de Cálculo](#-tipos-de-cálculo)
 - [Exemplos](#-exemplos)
 - [Troubleshooting](#-troubleshooting)
-- [Contribuição](#-contribuição)
+- [Histórico de Lançamentos](#-histórico-de-lançamentos)
 - [Licença](#-licença)
 
 ## 🚀 Características
@@ -75,7 +133,7 @@ python main.py
 # Opções 7, 8, 9, 10 demonstram cada tipo
 ```
 
-📖 **Documentação detalhada**: [TIPOS_DADOS_OBRIGATORIOS.md](TIPOS_DADOS_OBRIGATORIOS.md)
+📖 **Documentação detalhada**: [TIPOS_DADOS_OBRIGATORIOS.md](document/TIPOS_DADOS_OBRIGATORIOS.md)
 
 ## ❓ Sistema de Ajuda Interativa
 
@@ -106,7 +164,7 @@ h    # ou H, ou ?
 python demo_ajuda.py
 ```
 
-📖 **Documentação da ajuda**: [AJUDA_SISTEMA.md](AJUDA_SISTEMA.md)
+📖 **Documentação da ajuda**: [AJUDA_SISTEMA.md](document/AJUDA_SISTEMA.md)
 
 ## � Pré-requisitos
 
@@ -122,7 +180,9 @@ docker --version     # Deve mostrar versão do Docker
 docker-compose --version  # Deve mostrar versão do Compose
 ```
 
-## ⚡ Instalação e Execução Passo a Passo
+## 🔧 Como executar o código
+
+**Pré-requisitos:** Python 3.8+, Docker e Docker Compose instalados
 
 ### 🔥 Método Rápido (Recomendado)
 
@@ -131,7 +191,7 @@ docker-compose --version  # Deve mostrar versão do Compose
 cd cana-colheita-system
 
 # 2. Execute o script de setup automático
-./setup.sh
+scriptscripts/setup.sh
 
 # 3. Inicie o banco de dados Oracle
 docker-compose up -d
@@ -385,7 +445,7 @@ git clone <url-do-repositorio>
 cd cana-colheita-system
 
 # 2. Executar setup automático
-./setup.sh
+scripts/setup.sh
 
 # 3. Iniciar banco PostgreSQL
 docker-compose -f docker-compose-postgres.yml up -d
@@ -736,7 +796,7 @@ Tipos de consulta:
 ### Execução Básica (Apenas 4 Comandos!)
 ```bash
 cd cana-colheita-system
-./setup.sh
+scripts/setup.sh
 docker-compose -f docker-compose-postgres.yml up -d
 source venv/bin/activate && python main.py
 ```
@@ -791,7 +851,7 @@ data/
 #### Opção 1: Script Automático
 ```bash
 cd cana-colheita-system
-./setup.sh
+scripts/setup.sh
 ```
 
 #### Opção 2: Makefile
@@ -1574,71 +1634,21 @@ docker-compose build --no-cache
 3. **Timing**: Colheita no ponto ideal de maturação
 4. **Condições**: Evitar períodos de chuva excessiva
 
-## 🤝 Contribuição
+## 🗃 Histórico de lançamentos
 
-### Como Contribuir
+* 1.0.0 - 15/10/2024
+    * 🚀 Lançamento inicial do sistema
+    * ✅ Implementação completa dos 4 tipos de dados obrigatórios (Lista, Tupla, Dicionário, DataFrame)
+    * ✅ Cálculo básico e avançado de perdas na colheita
+    * ✅ Integração com Oracle Database e PostgreSQL via Docker
+    * ✅ Interface CLI interativa com menus coloridos
+    * ✅ Sistema de backup automático em JSON
+    * ✅ Relatórios consolidados com estatísticas
+    * ✅ Documentação interativa completa
+    * ✅ Valores padrão inteligentes baseados em condições brasileiras
+    * ✅ Sistema de validação robusta de dados
+    * ✅ Logging detalhado para troubleshooting
 
-1. Fork do projeto
-2. Criar branch para feature (`git checkout -b feature/nova-funcionalidade`)
-3. Commit das mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
-4. Push para branch (`git push origin feature/nova-funcionalidade`)
-5. Criar Pull Request
+## 📋 Licença
 
-### Áreas para Melhoria
-
-- [ ] Interface web com Flask/Django
-- [ ] Análise estatística avançada com machine learning
-- [ ] Integração com APIs meteorológicas
-- [ ] Suporte a outros SGBDs (PostgreSQL, MySQL)
-- [ ] Dashboard de visualização com charts
-- [ ] API REST para integração externa
-- [ ] Testes automatizados unitários
-- [ ] Dockerização completa da aplicação Python
-
-## 📄 Licença
-
-Este projeto está sob licença MIT. Veja o arquivo [`LICENSE`](LICENSE) para detalhes.
-
-## 📞 Suporte e Contato
-
-- **🐛 Issues**: [Reporte bugs e solicite features](../../issues)
-- **📖 Wiki**: [Documentação avançada](../../wiki)
-- **💬 Discussões**: [Fórum da comunidade](../../discussions)
-
-## 🌟 Como Contribuir
-
-1. ⭐ **Star** este repositório se ele foi útil
-2. 🍴 **Fork** para criar sua própria versão
-3. 🐛 **Reporte bugs** via Issues
-4. 💡 **Sugira melhorias** via Discussions
-5. 🔧 **Contribua código** via Pull Requests
-
-## 📊 Estatísticas do Projeto
-
-![GitHub stars](https://img.shields.io/github/stars/seu-usuario/cana-colheita-system?style=social)
-![GitHub forks](https://img.shields.io/github/forks/seu-usuario/cana-colheita-system?style=social)
-![GitHub issues](https://img.shields.io/github/issues/seu-usuario/cana-colheita-system)
-![GitHub license](https://img.shields.io/github/license/seu-usuario/cana-colheita-system)
-
-## 🔄 Changelog
-
-### v1.0.0 (2024-10-15)
-- ✅ Lançamento inicial
-- ✅ Cálculo básico e avançado de perdas
-- ✅ Integração Oracle via Docker
-- ✅ Interface CLI completa
-- ✅ Exportação/importação JSON
-- ✅ Relatórios consolidados
-- ✅ Documentação completa
-- ✅ 4 tipos de dados obrigatórios implementados
-- ✅ Sistema de ajuda interativa
-
----
-
-<div align="center">
-
-**🌾 Desenvolvido com ❤️ para o agronegócio brasileiro 🇧🇷**
-
-[⬆️ Voltar ao topo](#-sistema-de-cálculo-de-perdas-na-colheita-de-cana-de-açúcar)
-
-</div>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Juliagutierres29/cana-colheita-system">SISTEMA DE CÁLCULO DE PERDAS NA COLHEITA DE CANA-DE-AÇÚCAR</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP - Grupo Cana Colheita System</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>

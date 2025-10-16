@@ -1,0 +1,26 @@
+{
+  "dados_producao": {
+    "localizacao": "Usina São João - Área Central",
+    "area_plantada_ha": 150.0,
+    "qtd_colhida_toneladas": 13500.0,
+    "tipo_colheita": "mecanizada",
+    "data_colheita": "2024-09-10"
+  },
+  "calculo_perdas": {
+    "perda_estimada_toneladas": 1215.0,
+    "percentual_perda": 9.0,
+    "fatores_aplicados": {
+      "fator_base": 0.08,
+      "fator_umidade": 0.006,
+      "fator_idade": 0.004
+    },
+    "metodo_calculo": "avancado",
+    "observacoes": "Cálculo avançado para colheita mecanizada; Solo muito úmido (75%) aumentou perdas; Cana madura (19 meses) gerou mais perdas"
+  },
+  "resumo": {
+    "producao_potencial_toneladas": 14715.0,
+    "eficiencia_colheita": 91.74,
+    "produtividade_ha": 90.0
+  },
+  "timestamp_calculo": "2024-10-15T14:45:00"
+}

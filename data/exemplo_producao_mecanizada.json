@@ -1,0 +1,13 @@
+{
+  "localizacao": "Fazenda Santa Maria - Talhão A1",
+  "area_plantada_ha": 75.5,
+  "qtd_colhida_toneladas": 6040.0,
+  "tipo_colheita": "mecanizada",
+  "data_colheita": "2024-07-20",
+  "variedade_cana": "RB92579",
+  "idade_cana_meses": 14,
+  "umidade_solo": 68.5,
+  "temperatura_media": 27.8,
+  "precipitacao_mm": 1280.5,
+  "timestamp_exportacao": "2024-10-15T10:30:00"
+}

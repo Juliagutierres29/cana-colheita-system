@@ -1,0 +1,13 @@
+{
+  "localizacao": "Sítio Boa Esperança - Setor B",
+  "area_plantada_ha": 32.0,
+  "qtd_colhida_toneladas": 2240.0,
+  "tipo_colheita": "manual",
+  "data_colheita": "2024-08-15",
+  "variedade_cana": "SP813250",
+  "idade_cana_meses": 16,
+  "umidade_solo": 62.0,
+  "temperatura_media": 29.2,
+  "precipitacao_mm": 950.8,
+  "timestamp_exportacao": "2024-10-15T10:30:00"
+}

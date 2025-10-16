@@ -1,0 +1,27 @@
+# Dependências para Sistema de Cálculo de Perdas na Colheita de Cana-de-Açúcar
+# Conexão com banco de dados
+cx_Oracle==8.3.0
+psycopg2-binary==2.9.9
+
+# Manipulação de dados
+pandas==2.1.4
+numpy==1.24.3
+
+# Manipulação de JSON
+jsonschema==4.21.1
+
+# Utilitários para datas
+python-dateutil==2.8.2
+
+# Logging avançado
+colorlog==6.8.2
+
+# Configuração e ambiente
+python-dotenv==1.0.0
+
+# Testes (opcional para desenvolvimento)
+pytest==7.4.4
+pytest-cov==4.1.0
+
+# Formatação de saída
+tabulate==0.9.0

@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: cana-oracle-db
+    environment:
+      # Configurações principais
+      ORACLE_PASSWORD: OraclePassword123
+      ORACLE_DATABASE: XEPDB1
+      APP_USER: cana_user
+      APP_USER_PASSWORD: CanaPassword123
+      # Configurações avançadas
+      ORACLE_CHARACTERSET: AL32UTF8
+      # Desabilitar healthcheck interno que pode causar problemas
+      ORACLE_EDITION: xe
+    ports:
+      # Porta padrão do Oracle XE
+      - "1521:1521"
+    volumes:
+      # Volume para persistir dados
+      - oracle_data:/opt/oracle/oradata
+      # Scripts de inicialização simplificado
+      - ./docker/init-db.sql:/container-entrypoint-initdb.d/init.sql
+    # Healthcheck simplificado
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'SELECT 1 FROM DUAL;' | sqlplus -S cana_user/CanaPassword123@//localhost:1521/XEPDB1 | grep -q '^1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
+    restart: unless-stopped
+    # Configurações de memória para evitar problemas
+    shm_size: 1g
+    networks:
+      - cana-network
+
+  # Serviço opcional para administração web do Oracle (desabilitado por problemas de imagem)
+  # oracle-apex:
+  #   image: container-registry.oracle.com/database/ords:21.4.2
+  #   container_name: cana-oracle-apex
+  #   depends_on:
+  #     oracle-db:
+  #       condition: service_healthy
+  #   environment:
+  #     ORDS_CONFIG_DIR: /opt/oracle/ords/config
+  #     DB_HOSTNAME: oracle-db
+  #     DB_PORT: 1521
+  #     DB_SERVICENAME: XE
+  #     APEX_LISTENER_PASSWORD: OraclePassword123
+  #     APEX_REST_PASSWORD: OraclePassword123
+  #     PUBLIC_PASSWORD: OraclePassword123
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - cana-network
+  #   restart: unless-stopped
+
+volumes:
+  oracle_data:
+    driver: local
+
+networks:
+  cana-network:
+    driver: bridge

@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Usando PostgreSQL como alternativa mais estável
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: cana-postgres-db
+    environment:
+      POSTGRES_DB: cana_db
+      POSTGRES_USER: cana_user
+      POSTGRES_PASSWORD: CanaPassword123
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init-postgres.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cana_user -d cana_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+      - cana-network
+
+  # Oracle alternativo (comentado por enquanto)
+  # oracle-db:
+  #   image: gvenzl/oracle-xe:18-slim
+  #   container_name: cana-oracle-db
+  #   environment:
+  #     ORACLE_PASSWORD: OraclePassword123
+  #     ORACLE_DATABASE: XEPDB1
+  #     APP_USER: cana_user
+  #     APP_USER_PASSWORD: CanaPassword123
+  #   ports:
+  #     - "1521:1521"
+  #   volumes:
+  #     - oracle_data:/opt/oracle/oradata
+  #   restart: unless-stopped
+  #   networks:
+  #     - cana-network
+
+volumes:
+  postgres_data:
+    driver: local
+  # oracle_data:
+  #   driver: local
+
+networks:
+  cana-network:
+    driver: bridge

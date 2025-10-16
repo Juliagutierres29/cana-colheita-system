@@ -11,10 +11,10 @@
 ## Grupo de Desenvolvimento - Cana Colheita System
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/in/julia-gutierres/">Julia Gutierres Fernandes Souza</a>
-- <a href="https://www.linkedin.com/in/everton-marinho/">Everton Marinho Souza</a>
-- <a href="https://www.linkedin.com/in/matheus-marteletti/">Matheus Ribeiro Marteletti</a> 
-- <a href="https://www.linkedin.com/in/raimunda-nayara/">Raimunda Nayara Mendes dos Santos</a>
+- <a>Julia Gutierres Fernandes Souza</a>
+- <a>Everton Marinho Souza</a>
+- <a>Matheus Ribeiro Marteletti</a> 
+- <a>Raimunda Nayara Mendes dos Santos</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 

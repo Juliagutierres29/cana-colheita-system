@@ -36,6 +36,8 @@ Sistema completo em Python para calcular perdas durante a colheita de cana-de-a�
 
 O sistema oferece interface CLI interativa, cálculos básicos e avançados de perdas, relatórios estatísticos consolidados, backup em JSON e sistema de ajuda completo. Implementa validação robusta de dados, logging detalhado e valores padrão inteligentes baseados nas condições brasileiras de cultivo.
 
+Obs: Não consegui utilizar o Oracble DB, fiz de tudo para configurar no docker e não consegui, migrei a solução para o postgresSQL e deu tudo certo
+
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
